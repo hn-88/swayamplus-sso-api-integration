@@ -2,7 +2,7 @@
 namespace local_swayamplus;
 
 class api {
-    private static function get_access_token() {
+    public static function get_access_token() {
         $cache = \cache::make('local_swayamplus', 'tokens');
         $token = $cache->get('bearer_token');
         
