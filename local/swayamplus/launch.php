@@ -1,5 +1,5 @@
 <?php
-// File: local/swayamplusssoapi/launch.php
+// File: local/swayamplus/launch.php
 require(__DIR__ . '/../../config.php');
 
 $iss = optional_param('iss', '', PARAM_URL);
