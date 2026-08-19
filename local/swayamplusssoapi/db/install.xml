@@ -1,0 +1,12 @@
+<table name="local_swayamplus_enrol" comment="Maps Moodle enrollments to Swayam">
+    <field name="id" type="int" length="10" notnull="true" sequence="true"/>
+    <field name="userid" type="int" length="10" notnull="true" sequence="false"/>
+    <field name="courseid" type="int" length="10" notnull="true" sequence="false"/>
+    <field name="swayam_enrollment_id" type="char" length="255" notnull="true" sequence="false"/>
+    <keys>
+        <key name="primary" type="primary" fields="id"/>
+    </keys>
+    <indexes>
+        <index name="user_course" unique="true" fields="userid, courseid"/>
+    </indexes>
+</table>
