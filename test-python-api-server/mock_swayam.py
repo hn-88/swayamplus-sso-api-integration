@@ -1,12 +1,16 @@
 import time
 import base64
 from flask import Flask, request, redirect, jsonify
+from werkzeug.middleware.proxy_fix import ProxyFix
 import jwt
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.backends import default_backend
 
 app = Flask(__name__)
+# Add this line so Flask knows to use ngrok's https:// URL
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+# and in a separate window, run ngrok http 8000 to get the ngrok url
 session_store = {}
 
 # 1. Generate an RSA Key Pair in memory (required for OIDC JWT signing)
