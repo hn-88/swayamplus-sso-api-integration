@@ -3,3 +3,12 @@ Please see [Prompt.md](https://github.com/hn-88/swayamplus-sso-api-integration/b
 Ngrok will output a Forwarding URL that looks like this: https://a1b2-c3d4.ngrok-free.app
 
 In Moodle's OAuth 2 settings, use https://a1b2-c3d4.ngrok-free.app/oidc as the Service base URL.
+
+Also, in launch.php of the local plugin in this repo,
+```
+// CHANGE THIS:
+// if ($iss !== 'https://swayamplus.education.gov.in/oidc') {
+
+// TO THIS (for testing):
+if ($iss !== 'https://a1b2-c3d4.ngrok-free.app/oidc') {
+```
