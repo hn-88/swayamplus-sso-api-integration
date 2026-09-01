@@ -1,25 +1,51 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Strings for component 'local_swayamplus'
+ *
+ * @package    local_swayamplus
+ * @copyright  2025 hn_88
+ * @license    https://mit-license.org/
+ */
+
 defined('MOODLE_INTERNAL') || die();
 
-if ($hassiteconfig) {
-    $settings = new admin_settingpage('local_swayamplus', get_string('settingspage', 'local_swayamplus'));
-    $ADMIN->add('localplugins', $settings);
+// Required by every plugin - used wherever Moodle lists installed plugins
+// (admin/plugins.php, the localplugins settings tree, etc.).
+$string['pluginname'] = 'Swayam Plus';
 
-    // Add a text box to enter the OAuth 2 Issuer ID.
-    $settings->add(new admin_setting_configtext(
-        'local_swayamplus/oauth_issuer_id',
-        get_string('oauthissuerid', 'local_swayamplus'),
-        get_string('oauthissuerid_desc', 'local_swayamplus'),
-        '1', // Default value.
-        PARAM_INT
-    ));
+// --- Settings page strings (settings.php) ---
+$string['settingspage'] = 'Swayam Plus Settings';
 
-    // (Optional) Add a text box for the Swayam API Base URL while you're at it.
-    $settings->add(new admin_setting_configtext(
-        'local_swayamplus/swayam_url',
-        get_string('swayamurl', 'local_swayamplus'),
-        get_string('swayamurl_desc', 'local_swayamplus'),
-        '',
-        PARAM_URL
-    ));
-}
+$string['oauthissuerid'] = 'OAuth 2 Issuer ID';
+$string['oauthissuerid_desc'] = 'Enter the ID number of the Swayam Mock / Production service created in OAuth 2 Services.';
+
+$string['swayamurl'] = 'Swayam API Base URL';
+$string['swayamurl_desc'] = 'e.g. https://a1b2-c3d4.ngrok-free.app';
+
+// --- Likely needed elsewhere in this plugin ---
+
+// Scheduled task display name, referenced from db/tasks.php as
+// 'local_swayamplus\task\sync_roster'.
+$string['synctask'] = 'Swayam Plus roster sync';
+
+// If you add db/access.php with a capability such as
+// 'local/swayamplus:manage':
+// $string['swayamplus:manage'] = 'Manage Swayam Plus settings';
+
+// Privacy API stub, required if you later add classes/privacy/provider.php.
+// $string['privacy:metadata'] = 'The Swayam Plus plugin does not store personal data.';
