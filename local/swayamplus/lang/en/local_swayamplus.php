@@ -18,8 +18,8 @@
  * Strings for component 'local_swayamplus'
  *
  * @package    local_swayamplus
- * @copyright  2025 hn_88
- * @license    https://mit-license.org/
+ * @copyright  2025 Your Organisation
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -36,6 +36,12 @@ $string['oauthissuerid_desc'] = 'Enter the ID number of the Swayam Mock / Produc
 
 $string['swayamurl'] = 'Swayam API Base URL';
 $string['swayamurl_desc'] = 'e.g. https://a1b2-c3d4.ngrok-free.app';
+
+$string['clientid'] = 'Client ID';
+$string['clientid_desc'] = 'OAuth 2 client_credentials ID issued by Swayam Plus for the partner API.';
+
+$string['clientsecret'] = 'Client secret';
+$string['clientsecret_desc'] = 'OAuth 2 client_credentials secret issued by Swayam Plus. Stored masked on this settings page.';
 
 // --- Likely needed elsewhere in this plugin ---
 
