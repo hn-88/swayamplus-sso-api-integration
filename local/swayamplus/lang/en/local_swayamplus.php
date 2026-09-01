@@ -47,7 +47,7 @@ $string['clientsecret_desc'] = 'OAuth 2 client_credentials secret issued by Sway
 
 // Scheduled task display name, referenced from db/tasks.php as
 // 'local_swayamplus\task\sync_roster'.
-$string['synctask'] = 'Swayam Plus roster sync';
+$string['tasksyncroster'] = 'Swayam Plus nightly roster sync';
 
 // If you add db/access.php with a capability such as
 // 'local/swayamplus:manage':
