@@ -48,6 +48,8 @@ $string['clientsecret_desc'] = 'OAuth 2 client_credentials secret issued by Sway
 // Scheduled task display name, referenced from db/tasks.php as
 // 'local_swayamplus\task\sync_roster'.
 $string['tasksyncroster'] = 'Swayam Plus nightly roster sync';
+$string['taskretryqueue'] = 'Swayam Plus push retry queue';
+$string['cannotfetchtoken'] = 'Could not obtain an access token from the Swayam Plus API';
 
 // If you add db/access.php with a capability such as
 // 'local/swayamplus:manage':
