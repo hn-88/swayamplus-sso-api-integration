@@ -1,12 +1,25 @@
-<table name="local_swayamplus_enrol" comment="Maps Moodle enrollments to Swayam">
-    <field name="id" type="int" length="10" notnull="true" sequence="true"/>
-    <field name="userid" type="int" length="10" notnull="true" sequence="false"/>
-    <field name="courseid" type="int" length="10" notnull="true" sequence="false"/>
-    <field name="swayam_enrollment_id" type="char" length="255" notnull="true" sequence="false"/>
-    <keys>
-        <key name="primary" type="primary" fields="id"/>
-    </keys>
-    <indexes>
-        <index name="user_course" unique="true" fields="userid, courseid"/>
-    </indexes>
-</table>
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/swayamplus/db" VERSION="20250901" COMMENT="XMLDB file for Moodle local/swayamplus"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_swayamplus_enrol" COMMENT="Maps Moodle enrollments to Swayam">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="swayam_enrollment_id" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+        <KEY NAME="courseid" TYPE="foreign" FIELDS="courseid" REFTABLE="course" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="user_course" UNIQUE="true" FIELDS="userid, courseid"/>
+        <INDEX NAME="swayam_enrollment_id" UNIQUE="false" FIELDS="swayam_enrollment_id"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
