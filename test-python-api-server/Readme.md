@@ -1,3 +1,12 @@
+To run the python test server, we need 
+```
+pip install flask pyjwt cryptography
+```
+or in my case on Ubuntu,
+```
+sudo apt install python3-flask python3-jwt python3-cryptography
+```
+
 Please see [Prompt.md](https://github.com/hn-88/swayamplus-sso-api-integration/blob/main/test-python-api-server/Prompt.md) for the prompts used to create this mock server used for testing.
 
 Ngrok will output a Forwarding URL that looks like this: https://a1b2-c3d4.ngrok-free.app
